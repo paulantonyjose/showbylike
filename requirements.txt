@@ -2,4 +2,4 @@ Django==1.11.29
 pytz==2020.1
 sqlparse==0.3.1
 djangorestframework
-
+django-heroku==0.3.1
