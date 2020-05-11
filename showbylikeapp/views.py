@@ -87,7 +87,7 @@ class ShowByLikeViewSet(viewsets.ViewSet):
 	    	list_likes=[like for like in lst_likes if like not in lst_already_liked]
 	    	lst_dislikes=request.data.get('dislikes') or []
 	    	lst_already_disliked=Likes.objects.filter(fk_user=request.user,int_like=0).values_list('fk_posts_id',flat=True)
-	    	lst_dislikes=[like for dislike in lst_dislikes if like not in lst_already_disliked]
+	    	lst_dislikes=[like for like in lst_dislikes if like not in lst_already_disliked]
 	    	lst_likes_all=[]
 	    	
 	    	for post_id in lst_likes:
