@@ -29,9 +29,11 @@ router.register(r'showbylike', ShowByLikeViewSet,basename='showbylike')
 urlpatterns += router.urls
 
 
-
+   
 if settings.DEBUG:
+    import debug_toolbar
     urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
         path('api-auth/', include('rest_framework.urls')),
 
         # For django versions before 2.0:
